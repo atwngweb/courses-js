@@ -57,3 +57,8 @@ E. Các loại hàm trong js
         };
 
         const tinhTich = (a, b) => a * b;
+
+
+D. Hoisting
+
+    Hoisting - Đưa phần khai báo biến lên trên đầu của phạm vi (Kh bao gồm giá trị của biến)
