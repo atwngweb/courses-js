@@ -14,6 +14,9 @@ B. Toán tử gán
     Toán tử gán (=): Gán giá trị cho biến.
     Toán tử gán kết hợp (+=, -=, *=, /=, %=, **=): Kết hợp phép toán với phép gán.
 
+C. Hàm
+
+
 
 
     
