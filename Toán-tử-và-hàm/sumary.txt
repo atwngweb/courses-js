@@ -16,6 +16,11 @@ B. Toán tử gán
 
 C. Hàm
 
+D. Toán tử ++i và i++
+
+    i++ => Có nghĩa là hậu tăng => trả về giá trị hiện tại của biến RỒI MỚI TĂNG
+
+    ++t => tiền tăng => tăng giá trị của biến trước RỒI MỚI TRẢ VỀ GIÁ TRỊ
 
 
 
