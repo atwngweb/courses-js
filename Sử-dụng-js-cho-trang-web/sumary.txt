@@ -1,0 +1,8 @@
+
+
+
+- Tích hợp JavaScript vào trang web bằng cách sử dụng thẻ script. Đặt nó ở vị trí cuối cùng của thẻ body là cách đơn giản nhất để hạn chế một số lỗi thường gặp và giúp trang web hiển thị nhanh hơn.
+
+- Có thể viết code JavaScript trực tiếp trong thẻ script hoặc link nó tới một file JavaScript ở bên ngoài. - Hãy link tới file bên ngoài để dễ quản lý và bảo trì hơn.
+
+- Tránh sử dụng quá nhiều JavaScript không cần thiết vì sẽ gây nặng trang và giảm trải nghiệm người dùng.
