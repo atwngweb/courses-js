@@ -1,0 +1,17 @@
+Câu lệnh điều kiện: Giống như chọn con đường tại ngã ba dựa trên điều kiện cụ thể.
+
+
+Toán tử so sánh:
+        == và !=: So sánh giá trị, không xét kiểu dữ liệu.
+        === và !==: So sánh cả giá trị và kiểu dữ liệu.
+        >, <, >=, <=: So sánh lớn hơn, nhỏ hơn, hoặc bằng.
+If-Else:
+        if: Chạy khối lệnh nếu điều kiện đúng.
+        else: Chạy khối lệnh nếu điều kiện sai.
+        else if: Thêm điều kiện kiểm tra mới.
+
+
+Inline if-else: Viết gọn khi mỗi nhánh if-else chỉ có một dòng lệnh.
+
+
+Toán tử 3 ngôi: Cú pháp rút gọn cho if-else, nên sử dụng với điều kiện đơn giản và ngắn gọn.
