@@ -1,0 +1,24 @@
+Chuỗi trong JavaScript:
+
+    Chuỗi là kiểu dữ liệu dùng để biểu diễn văn bản.
+    Có thể tạo chuỗi bằng dấu nháy đơn (' '), nháy kép (" ") hoặc backticks (` `).
+
+    
+Nối chuỗi:
+
+    Sử dụng toán tử + để nối các chuỗi.
+    Lưu ý sự khác biệt giữa nối chuỗi và cộng số.
+
+
+Template literals:
+
+    Sử dụng backticks để tạo chuỗi đa năng hơn.
+    Hỗ trợ nội suy biến và biểu thức (${expression}).
+    Cho phép xuống dòng trực tiếp trong chuỗi.
+
+
+Các lưu ý quan trọng:
+
+    Chú ý đến loại dấu nháy sử dụng để tránh lỗi.
+    Phân biệt rõ ràng giữa nối chuỗi và cộng số.
+    Tránh sử dụng + cho cả nối chuỗi và cộng số trong cùng một biểu thức.
