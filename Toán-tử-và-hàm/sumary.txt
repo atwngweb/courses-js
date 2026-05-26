@@ -1,0 +1,19 @@
+A. Toán tử số học
+    + (Cộng): Cộng hai giá trị.
+    - (Trừ): Trừ một giá trị từ giá trị khác.
+    * (Nhân): Nhân hai giá trị.
+    / (Chia): Chia một giá trị cho giá trị khác.
+    % (Chia lấy dư): Tính phần dư của phép chia.
+    ++ (Tăng giá trị lên 1): Tăng giá trị của biến lên 1.
+    -- (Giảm giá trị đi 1): Giảm giá trị của biến đi 1.
+    ** (Lũy thừa): Tính lũy thừa của một số.  
+
+
+
+B. Toán tử gán
+    Toán tử gán (=): Gán giá trị cho biến.
+    Toán tử gán kết hợp (+=, -=, *=, /=, %=, **=): Kết hợp phép toán với phép gán.
+
+
+
+    
