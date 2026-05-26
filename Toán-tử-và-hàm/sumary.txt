@@ -16,6 +16,7 @@ B. Toán tử gán
 
 C. Hàm
 
+
 D. Toán tử ++i và i++
 
     i++ => Có nghĩa là hậu tăng => trả về giá trị hiện tại của biến RỒI MỚI TĂNG
@@ -24,4 +25,35 @@ D. Toán tử ++i và i++
 
 
 
+
+E. Các loại hàm trong js
+
+    1. Hàm khai báo (Declaration function)
+
+        function tenHam(thamSo) {
+            // Khối lệnh
+        }
+
+    2. Hàm biểu thức (Function expression) 
+         
+        const tenHam = function(thamSo) {
+            // Khối lệnh
+        };
     
+    (*) Hàm này chỉ có thể được gọi sau khi nó được định nghĩa.
+
+    Lưu ý: Nếu gọi hàm trước khi định nghĩa sẽ xảy ra lỗi: Uncaught ReferenceError: Cannot access 'tinhHieu' before initialization.
+
+    3. Hàm mũi tên (Arrow function)
+
+        const tenHam = (thamSo) => {
+            // Khối lệnh
+        };
+    
+    Hàm mũi tên: Cú pháp ngắn gọn của hàm biểu thức được giới thiệu trong ES6.
+
+        const tinhTich = (a, b) => {
+            return a * b;
+        };
+
+        const tinhTich = (a, b) => a * b;
