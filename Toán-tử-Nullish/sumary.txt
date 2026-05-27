@@ -1,0 +1,20 @@
+
+
+- Khái niệm toán tử Nullish coalescing: Toán tử ?? kiểm tra giá trị null hoặc undefined, trả về toán hạng bên phải nếu toán hạng bên trái là null hoặc undefined, ngược lại trả về toán hạng bên trái.
+
+- Cú pháp sử dụng: let kết_quả = biến ?? giá_trị_mặc_định; cho phép đặt giá trị mặc định cho biến.
+
+- Ứng dụng thực tế:
+    Tránh lầm với giá trị “falsy” khác: Giải quyết vấn đề khi mảng hoặc object chứa các giá trị “falsy” khác null và undefined như 0, false, chuỗi rỗng "".
+    
+    Đặt giá trị mặc định khi lấy giá trị trong mảng: Sử dụng array[index] ?? defaultValue để trả về giá trị mặc định nếu phần tử tại index là undefined.
+
+- Lưu ý quan trọng:
+
+    Khi nào nên sử dụng: Khi xử lý giá trị có thể là null hoặc undefined và tránh nhầm lẫn với các giá trị “falsy” khác.
+    
+    So sánh với toán tử OR (||): ?? chỉ xét null và undefined, còn || xét tất cả giá trị “falsy”.
+    
+    “Đánh giá ngắn gọn” (short-circuit evaluation): ?? chỉ đánh giá toán hạng thứ hai nếu thứ nhất là null hoặc undefined.
+    
+    Lỗi cú pháp khi kết hợp với AND (&&) hoặc OR (||): Cần sử dụng dấu ngoặc để rõ ràng về ưu tiên của các toán tử.
