@@ -147,3 +147,90 @@ const arrToHTMLList = (arr) => {
 };
 
 console.log(arrToHTMLList(["Fe", "Al", "Oxi", "Heli"]));
+
+// Kiểm tra 1 số có là số nguyên ?
+
+const isInteger = (a) => {
+  if (typeof a === "number" && a % 1 === 0) {
+    return true;
+  }
+  return false;
+};
+
+//Viết một hàm findGCD nhận vào hai tham số là hai số
+// nguyên dương a và b, và trả về Ước chung lớn nhất
+// (UCLN) của chúng. Nếu một trong các đầu vào không
+// phải là số nguyên dương thì hàm trả về "Invalid
+// input. Please provide two positive integers."
+
+function findGCD(a, b) {
+  if (!isInteger(a) || !isInteger(b) || a < 0 || b < 0) {
+    return "Invalid input. Please provide two positive integers.";
+  } else {
+    while (b !== 0) {
+      let temp = a % b;
+      a = b;
+      b = temp;
+    }
+    return a;
+  }
+}
+
+console.log(findGCD(3, 12));
+console.log(findGCD(8, 36));
+
+// Viết một hàm printFibonacci nhận vào một số nguyên n
+// và in ra dãy Fibonacci không vượt quá n. Dãy
+// Fibonacci bắt đầu bằng hai số 0 và 1, mỗi số tiếp
+// theo trong dãy là tổng của hai số trước đó.
+
+console.log("fibonacci");
+
+const printFibo = (n) => {
+  let f0 = 0,
+    f1 = 1,
+    f2;
+  console.log(f0);
+  while (f1 <= n) {
+    console.log(f1);
+    f2 = f0 + f1;
+    f0 = f1;
+    f1 = f2;
+  }
+};
+
+console.log(printFibo(20));
+
+// Viết hàm filterEvensAndSum để lọc ra các số chẵn từ
+// một mảng số nguyên đầu vào và tính tổng của chúng.
+
+function filterEvensAndSum(arr) {
+  let sum = 0;
+  let i = 0;
+  while (i < arr.length) {
+    if (arr[i] % 2 === 0) {
+      sum += arr[i];
+    }
+    i++;
+  }
+  return sum;
+}
+
+// Viết hàm findLongestWord nhận vào một mảng các chuỗi
+// và trả về chuỗi dài nhất trong mảng đó. Nếu có nhiều
+// chuỗi có độ dài giống nhau và là dài nhất, trả về
+// chuỗi xuất hiện đầu tiên.
+
+function findLongestWord(arr) {
+  let maxLength = arr[0].length;
+  let i = 0;
+  let index = null;
+  while (i < arr.length) {
+    if (arr[i].length > maxLength) {
+      maxLength = arr[i].length;
+      index = i;
+    }
+    i++;
+  }
+  return arr[index];
+}
