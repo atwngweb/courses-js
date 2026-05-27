@@ -1,0 +1,25 @@
+
+
+
+Định nghĩa ép kiểu: Ép kiểu trong JavaScript là quá trình chuyển đổi giá trị từ một kiểu dữ liệu này sang một kiểu khác, thường xảy ra tự động trong các toán tử so sánh hoặc số học.
+
+Ép kiểu rõ ràng và ngầm:
+    Rõ ràng: Chủ động sử dụng các hàm như Number(), String(), Boolean(), v.v để chuyển đổi.
+    Ngầm: Tự động xảy ra, ví dụ khi sử dụng toán tử + hoặc ==.
+
+
+Các trường hợp ép kiểu phổ biến:
+    Sang chuỗi: Dùng String(), .toString(), nối chuỗi, hoặc Template literals.
+    Sang số: Dùng Number(), toán tử +, parseInt(), parseFloat().
+    Sang boolean: Dùng Boolean() hoặc !!.
+
+
+Quy tắc ép kiểu ngầm:
+    Với toán tử ==: So sánh giá trị sau khi chuyển đổi kiểu.
+    Với toán tử +: Nếu một trong hai giá trị là chuỗi, thực hiện nối chuỗi; nếu không, thực hiện cộng số.
+    Với toán tử -: Chuyển đổi cả hai giá trị sang số rồi thực hiện trừ.
+
+
+Lưu ý khi sử dụng ép kiểu:
+    Sử dụng toán tử so sánh nghiêm ngặt === để tránh hành vi không mong muốn từ ép kiểu ngầm.
+    Chú ý sử dụng cùng kiểu dữ liệu trong so sánh và tính toán.
