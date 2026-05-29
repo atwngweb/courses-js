@@ -4,12 +4,12 @@ export const battle = function (char1, char2) {
     console.log(`Round ${round}:`);
     if (char1.speed > char2.speed) {
       char1.attack(char2);
-      if (char2.isAlive()) {
+      if (char2.isAlive() && char1.isAlive()) {
         char2.attack(char1);
       }
     } else if (char2.speed > char1.speed) {
       char2.attack(char1);
-      if (char1.isAlive()) {
+      if (char1.isAlive() && char2.isAlive()) {
         char1.attack(char2);
       }
     } else {
