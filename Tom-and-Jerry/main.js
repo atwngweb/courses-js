@@ -1,29 +1,33 @@
-// Hàm tạo(Bản thiết kế đối tượng) - Function/Object Constructor
-// Không tạo hàm tạo bằng arrow function
-function Charater(name, hp, atk, defense) {
-  this.name = name;
-  this.hp = hp;
-  this.atk = atk;
-  this.defense = defense;
-  this.attack = (aim) => {
-    const damage = this.atk - aim.defense < 0 ? 0 : this.atk - aim.defense;
-    aim.hp -= damage;
-    console.log(
-      `${this.name} danh ${aim.name} mat ${damage} mau, ${aim.name} con ${aim.hp} mau.`,
-    );
-  };
+import { battle } from "./battle.js";
+import { Charater } from "./constructors.js";
+// // Hàm tạo(Bản thiết kế đối tượng) - Function/Object Constructor
+// // Không tạo hàm tạo bằng arrow function
+// function Charater(name, hp, atk, defense) {
+//   this.name = name;
+//   this.hp = hp;
+//   this.atk = atk;
+//   this.defense = defense;
+//   this.attack = (aim) => {
+//     const damage = this.atk - aim.defense < 0 ? 0 : this.atk - aim.defense;
+//     aim.hp -= damage;
+//     console.log(
+//       `${this.name} danh ${aim.name} mat ${damage} mau, ${aim.name} con ${aim.hp} mau.`,
+//     );
+//   };
 
-  this.isAlive = () => {
-    if (this.hp > 0) {
-      return true;
-    } else return false;
-  };
-}
+//   this.isAlive = () => {
+//     if (this.hp > 0) {
+//       return true;
+//     } else return false;
+//   };
+// }
 
 // Tạo ra Tom
-const tom = new Charater("Tom", 1000, 70, 20);
+const tom = new Charater("Tom", 1000, 50, 5);
 // Tạo ra Jerry
-const jerry = new Charater("Jerry", 400, 40, 10);
+const jerry = new Charater("Jerry", 500, 20, 20);
+
+battle(tom, jerry);
 
 // console.log(tom, jerry);
 
@@ -76,15 +80,15 @@ const jerry = new Charater("Jerry", 400, 40, 10);
 //   },
 // };
 
-let round = 1;
-while (tom.isAlive() && jerry.isAlive()) {
-  console.log(`Lan ${round} combat:`);
-  if (round % 2 == 0) {
-    jerry.attack(tom);
-  } else tom.attack(jerry);
-  round++;
-}
+// let round = 1;
+// while (tom.isAlive() && jerry.isAlive()) {
+//   console.log(`Lan ${round} combat:`);
+//   if (round % 2 == 0) {
+//     jerry.attack(tom);
+//   } else tom.attack(jerry);
+//   round++;
+// }
 
-if (tom.isAlive()) {
-  console.log(`${tom.name} win`);
-} else console.log(`${jerry.name} win`);
+// if (tom.isAlive()) {
+//   console.log(`${tom.name} win`);
+// } else console.log(`${jerry.name} win`);
