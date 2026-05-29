@@ -3,17 +3,20 @@
 /*
     Health/hp: Mau
     Attack power/atk: Sat thuong
+    defense: phong thu
 */
 
 const tom = {
   name: "Tom",
   hp: 1000,
-  atk: 50,
+  atk: 70,
+  defense: 50,
   //   Phuong thuc tan cong
   attack(aim) {
-    aim.hp -= this.atk;
+    const damage = this.atk - aim.defense < 0 ? 0 : this.atk - aim.defense;
+    aim.hp -= damage;
     console.log(
-      `${this.name} danh ${aim.name} mat ${this.atk} mau, ${aim.name} con ${aim.hp} mau.`,
+      `${this.name} danh ${aim.name} mat ${damage} mau, ${aim.name} con ${aim.hp} mau.`,
     );
   },
   //   Check health
@@ -26,12 +29,14 @@ const tom = {
 
 const jerry = {
   name: "Jerry",
-  hp: 300,
-  atk: 20,
+  hp: 400,
+  atk: 40,
+  defense: 10,
   attack(aim) {
-    aim.hp -= this.atk;
+    const damage = this.atk - aim.defense < 0 ? 0 : this.atk - aim.defense;
+    aim.hp -= damage;
     console.log(
-      `${this.name} danh ${aim.name} mat ${this.atk} mau, ${aim.name} con ${aim.hp} mau.`,
+      `${this.name} danh ${aim.name} mat ${damage} mau, ${aim.name} con ${aim.hp} mau.`,
     );
   },
   //   Check health
