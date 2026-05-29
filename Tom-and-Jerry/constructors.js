@@ -1,10 +1,11 @@
 // Hàm tạo(Bản thiết kế đối tượng) - Function/Object Constructor
 // Không tạo hàm tạo bằng arrow function
-export function Charater(name, hp, atk, defense) {
+export function Charater(name, hp, atk, defense, speed) {
   this.name = name;
   this.hp = hp;
   this.atk = atk;
   this.defense = defense;
+  this.speed = speed;
   this.attack = (aim) => {
     const damage = this.atk - aim.defense < 0 ? 0 : this.atk - aim.defense;
     aim.hp -= damage;
