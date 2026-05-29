@@ -23,9 +23,9 @@ import { Charater } from "./constructors.js";
 // }
 
 // Tạo ra Tom
-const tom = new Charater("Tom", 1000, 50, 5, 3, 0.6);
+const tom = new Charater("Tom", 1000, 70, 20, 3, 0.6);
 // Tạo ra Jerry
-const jerry = new Charater("Jerry", 500, 20, 20, 0.3);
+const jerry = new Charater("Jerry", 400, 40, 10, 1, 0.3);
 
 // jerry.attack(tom);
 

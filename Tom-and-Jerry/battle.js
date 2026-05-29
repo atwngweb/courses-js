@@ -13,7 +13,7 @@ export const battle = function (char1, char2) {
         char1.attack(char2);
       }
     } else {
-      if (round % 2 == 0) {
+      if (Math.random() < 0.5) {
         char1.attack(char2);
       } else char2.attack(char1);
     }
