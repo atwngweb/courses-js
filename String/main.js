@@ -84,3 +84,51 @@ function findLongestWord(sentence) {
   }
   return res;
 }
+
+// Hãy viết hàm truncateByWords nhận vào hai tham số:
+
+// str (chuỗi cần cắt),
+// maxWords (số lượng từ tối đa).
+// Hàm trả về chuỗi với tối đa maxWords từ. Nếu chuỗi có nhiều hơn maxWords từ, thêm dấu ... vào cuối chuỗi để biểu thị rằng chuỗi đã bị cắt. Nếu chuỗi có số lượng từ nhỏ hơn hoặc bằng maxWords, trả về chuỗi ban đầu mà không thay đổi.
+
+// Cach 1:
+
+function truncateByWords(str, maxWords) {
+  let cntWords = str.split(" ").length;
+  if (cntWords > maxWords) {
+    return str.split(" ", maxWords).join(" ") + "...";
+  } else {
+    return str;
+  }
+}
+
+// Cach 2:
+
+function truncateByWords(str, maxWords) {
+  const words = str.split(" ");
+  if (words.length <= maxWords) return str;
+
+  return words.slice(0, maxWords).join(" ") + "...";
+}
+
+// Yêu cầu bài tập:
+
+// Hãy viết hàm truncateByWordsTrimmed để khắc phục vấn đề khoảng trắng thừa. Hàm này sẽ:
+
+// Nhận vào một chuỗi str và số lượng từ tối đa maxWords.
+// Trả về chuỗi với tối đa maxWords từ, loại bỏ tất cả các khoảng trắng thừa (nhiều khoảng trắng liên tiếp chỉ tính là một khoảng trắng).
+// Nếu chuỗi có nhiều hơn maxWords từ, thêm dấu ... vào cuối chuỗi.
+// Nếu chuỗi có số lượng từ nhỏ hơn hoặc bằng maxWords, trả về chuỗi ban đầu mà không thay đổi.
+
+function truncateByWordsTrimmed(str, maxWords) {
+  let arrWords = str.split(" ").filter((word) => {
+    return word !== "";
+  });
+
+  let cntArrWords = arrWords.length;
+  if (cntArrWords > maxWords) {
+    return arrWords.slice(0, maxWords).join(" ") + "...";
+  } else {
+    return arrWords.join(" ");
+  }
+}
