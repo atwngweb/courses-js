@@ -132,3 +132,48 @@ function truncateByWordsTrimmed(str, maxWords) {
     return arrWords.join(" ");
   }
 }
+
+// Hãy viết một hàm isPalindrome nhận vào một chuỗi str và kiểm tra xem chuỗi đó có phải là chuỗi đối xứng (palindrome) hay không. Một chuỗi đối xứng là chuỗi đọc xuôi hay ngược đều giống nhau, không phân biệt chữ hoa chữ thường. Trả về "Invalid input" nếu đầu vào không phải chuỗi.
+
+// Cach 1:
+function isPalindrome(str) {
+  if (typeof str !== "string") {
+    return "Invalid input";
+  } else {
+    let str1 = str.toLowerCase();
+    let str2 = str1.split("").reverse().join("");
+    if (str1 === str2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+// Cach 2:
+function isPalindrome(str) {
+  if (typeof str !== "string") {
+    return "Invalid input";
+  }
+  const lowerStr = str.toLowerCase();
+  const reversedStr = lowerStr.split("").reverse().join("");
+  return lowerStr === reversedStr;
+}
+
+// Hãy viết hàm capitalize nhận vào một chuỗi bất kỳ và trả về chuỗi đó với chữ cái đầu của mỗi từ được viết hoa, các chữ cái còn lại viết thường.
+
+function capitalize(str) {
+  return str
+    .split(" ")
+    .map((word) => {
+      if (!word) return "";
+      return word[0].toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(" ");
+}
+
+console.log(capitalize("hello world")); // "Hello World"
+console.log(capitalize("javascript is fun")); // "Javascript Is Fun"
+console.log(capitalize("CAPITALIZE THIS SENTENCE")); // "Capitalize This Sentence"
+console.log(capitalize("   multiple    spaces  ")); // "   Multiple    Spaces  "
+console.log(capitalize("")); // ""
