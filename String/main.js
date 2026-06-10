@@ -177,3 +177,77 @@ console.log(capitalize("javascript is fun")); // "Javascript Is Fun"
 console.log(capitalize("CAPITALIZE THIS SENTENCE")); // "Capitalize This Sentence"
 console.log(capitalize("   multiple    spaces  ")); // "   Multiple    Spaces  "
 console.log(capitalize("")); // ""
+
+//Hãy viết một hàm countVowels nhận vào một chuỗi str và trả về số lượng nguyên âm (vowels) trong chuỗi đó. Các nguyên âm gồm: ‘a’, ‘e’, ‘i’, ‘o’, ‘u’, không phân biệt chữ hoa chữ thường. Trả về "Invalid input" nếu đầu vào không phải chuỗi.
+
+function countVowels(str) {
+  if (typeof str !== "string") {
+    return "Invalid input";
+  }
+  let cnt = 0;
+  let str1 = str.toLowerCase();
+  let key = "ueoai";
+  for (let char of str1) {
+    if (key.includes(char)) {
+      cnt++;
+    }
+  }
+  return cnt;
+}
+
+//Hãy viết hàm capitalizeFirst nhận vào một đoạn văn (chuỗi) và trả về đoạn văn với ký tự đầu tiên được viết hoa, các ký tự còn lại giữ nguyên (không làm thay đổi bất kỳ ký tự nào khác ngoài ký tự đầu tiên). Loại bỏ khoảng trắng thừa ở đầu và cuối chuỗi.
+
+function capitalizeFirst(str) {
+  let newStr = str.trim();
+  if (!newStr) {
+    return "";
+  }
+  let result = newStr.replace(newStr[0], newStr[0].toUpperCase());
+  return result;
+}
+
+//Hãy viết hàm có tên là formatTime, nhận vào ba tham số: giờ, phút và giây. Hàm này sẽ trả về chuỗi thời gian theo định dạng “hh:mm:ss”. Nếu giờ, phút hoặc giây chỉ có một chữ số, hãy thêm số 0 ở phía trước.
+
+function formatTime(hours, minutes, seconds) {
+  let nHours = `${hours}`.padStart(2, "0");
+  let nMinutes = `${minutes}`.padStart(2, "0");
+  let nSeconds = `${seconds}`.padStart(2, "0");
+  return `${nHours}:${nMinutes}:${nSeconds}`;
+}
+
+// Sample usage
+console.log(formatTime(5, 7, 9)); // "05:07:09"
+console.log(formatTime(12, 34, 56)); // "12:34:56"
+console.log(formatTime(0, 0, 0)); // "00:00:00"
+console.log(formatTime(23, 59, 59)); // "23:59:59"
+
+// Hãy viết hàm formatCardNumber nhận vào một số thẻ tín dụng và trả về số thẻ được định dạng theo mẫu ************1234. Hàm sẽ che dấu tất cả các số trừ 4 số cuối cùng của thẻ, có thể chỉ định chuỗi dùng để che các số, mặc định là dấu *. Đảm bảo đầu vào có độ dài hợp lệ của thẻ tín dụng (16 số), nếu không hàm trả về "Invalid card number".
+
+function formatCardNumber(cardNumber, maskChar = "*") {
+  let strNum = cardNumber + "";
+  if (strNum.length !== 16) {
+    return "Invalid card number";
+  }
+  let visibleNum = strNum.slice(-4);
+  let res = visibleNum.padStart(16, maskChar);
+  return res;
+}
+
+//Hãy cải thiện hàm formatCardNumberWithSpaces để hiển thị số thẻ tín dụng theo định dạng dễ đọc hơn, bằng cách thêm dấu cách giữa các nhóm 4 chữ số. Hàm sẽ che dấu tất cả các số trừ 4 số cuối cùng của thẻ, với kết quả có định dạng như sau: **** **** **** 1234. Người dùng có thể chỉ định chuỗi dùng để che các số, mặc định là dấu *. Đảm bảo đầu vào có độ dài hợp lệ của thẻ tín dụng (16 số), nếu không, trả về "Invalid card number".
+
+function formatCardNumber(cardNumber, maskChar = "*") {
+  let strNum = cardNumber + "";
+  if (strNum.length !== 16) {
+    return "Invalid card number";
+  }
+  let visibleNum = strNum.slice(-4);
+  let res = visibleNum.padStart(16, maskChar);
+  let result = "";
+  for (let i = 0; i < res.length; i++) {
+    result += res[i];
+    if ((i + 1) % 4 == 0 && i !== res.length - 1) {
+      result += " ";
+    }
+  }
+  return result;
+}
