@@ -251,3 +251,74 @@ function formatCardNumber(cardNumber, maskChar = "*") {
   }
   return result;
 }
+
+// Hãy viết hàm isStrongPassword nhận vào một chuỗi password và kiểm tra xem mật khẩu có mạnh hay không. Để mật khẩu được coi là mạnh, nó phải thỏa mãn các điều kiện sau:
+
+// Độ dài tối thiểu là 8 ký tự.
+// Chứa ít nhất một ký tự in hoa (A-Z).
+// Chứa ít nhất một ký tự thường (a-z).
+// Chứa ít nhất một chữ số (0-9).
+// Chứa ít nhất một ký tự đặc biệt trong khoảng từ ký tự đặc biệt của bảng mã UTF-8 có char code từ 33 đến 47 (bao gồm các ký tự !, #, $, %, &, *, (, ), …).
+
+function isStrongPassword(password) {
+  if (typeof password !== "string" || password.length < 8) {
+    return false;
+  }
+  let checkUpper = false;
+  let checkLower = false;
+  let checkDigit = false;
+  let checkSpecial = false;
+
+  for (let i = 0; i < password.length; i++) {
+    let char = password[i];
+    if (char >= "A" && char <= "Z") {
+      checkUpper = true;
+    }
+    if (char >= "a" && char <= "z") {
+      checkLower = true;
+    }
+    if (char >= "0" && char <= "9") {
+      checkDigit = true;
+    }
+    let charCode = char.charCodeAt(0);
+    if (charCode >= 33 && charCode <= 47) {
+      checkSpecial = true;
+    }
+  }
+
+  if (checkUpper && checkLower && checkDigit && checkSpecial) {
+    return true;
+  } else return false;
+}
+
+// Hãy hoàn thiện 2 hàm:
+
+// toUpperCaseCustom(str) nhận vào một chuỗi và chuyển toàn bộ các ký tự thường trong khoảng từ a - z thành ký tự in hoa.
+// toLowerCaseCustom(str) nhận vào một chuỗi và chuyển toàn bộ các ký tự in hoa trong khoảng từ A - Z thành ký tự thường.
+// Cả hai hàm không được sử dụng các hàm dựng sẵn như toUpperCase() hay toLowerCase().
+
+function toLowerCaseCustom(str) {
+  let res = "";
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (char >= "A" && char <= "Z") {
+      res += String.fromCharCode(char.charCodeAt(0) + 32);
+    } else {
+      res += char;
+    }
+  }
+  return res;
+}
+
+function toUpperCaseCustom(str) {
+  let res = "";
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (char >= "a" && char <= "z") {
+      res += String.fromCharCode(char.charCodeAt(0) - 32);
+    } else {
+      res += char;
+    }
+  }
+  return res;
+}
