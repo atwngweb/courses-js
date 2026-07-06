@@ -68,3 +68,19 @@ function parseIntSum(str) {
   }
   return sum;
 }
+
+// Hãy viết hàm findMax nhận vào một mảng các số và trả về giá trị lớn nhất trong mảng. Nếu mảng rỗng, hàm sẽ trả về -Infinity.
+
+function findMax(arr) {
+  if (arr.length == 0) {
+    return -Infinity;
+  } else {
+    let max = -Infinity;
+    for (let value of arr) {
+      if (value > max) {
+        max = value;
+      }
+    }
+    return max;
+  }
+}
