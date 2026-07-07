@@ -84,3 +84,54 @@ function findMax(arr) {
     return max;
   }
 }
+
+// Hãy viết một hàm formatDuration nhận vào một tham số duration là thời lượng tính bằng giây và trả về định dạng:
+
+// Nếu thời gian dưới 1 giờ: dạng “mm:ss” (phút:giây).
+// Nếu thời gian trên 60 phút: dạng “hh:mm:ss” (giờ:phút:giây).
+// Nếu duration không phải số hợp lệ hoặc nhỏ hơn 0 hàm cần trả về "Invalid duration".
+
+function formatDuration(duration) {
+  if (typeof duration !== "number" || isNaN(duration) || duration < 0) {
+    return "Invalid duration";
+  }
+  const hours = Math.floor(duration / 3600);
+  const minutes = Math.floor((duration % 3600) / 60);
+  const seconds = (duration % 3600) % 60;
+  const pad = (num) => String(num).padStart(2, "0");
+  if (hours == 0) {
+    return `${pad(minutes)}:${pad(seconds)}`;
+  } else {
+    return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  }
+}
+
+// Hãy viết hàm tên là luckyDraw không nhận tham số. Khi được gọi, hàm này sẽ trả về ngẫu nhiên một trong năm món đồ công nghệ sau: "Smartphone", "Laptop", "Tablet", "Smartwatch", "Headphones".
+function luckyDraw() {
+  const gift = ["Smartphone", "Laptop", "Tablet", "Smartwatch", "Headphones"];
+  const giftIndex = Math.floor(Math.random() * gift.length);
+  return gift[giftIndex];
+}
+
+// Cho trước hàm bauCuaRoll để mô phỏng việc tung xúc xắc trong trò chơi “Bầu Cua Tôm Cá”. Hãy viết thêm một hàm tên là placeBet nhận vào hai tham số:
+
+// bet: một chuỗi biểu thị mặt xúc xắc mà người chơi đặt cược ("Bầu", "Cua", "Tôm", "Cá", "Gà", "Nai").
+// amount: một số nguyên biểu thị số tiền mà người chơi muốn đặt cược.
+// Hàm này sẽ sử dụng kết quả của bauCuaRoll để kiểm tra xem người chơi có thắng cược hay không. Nếu kết quả tung xúc xắc có chứa mặt mà người chơi đặt cược, hàm sẽ trả về số tiền thắng cược là amount * số lần mặt cược xuất hiện. Nếu không, hàm sẽ trả về -amount (số tiền thua).
+
+function bauCuaRoll() {
+  const faces = ["Bầu", "Cua", "Tôm", "Cá", "Gà", "Nai"];
+  const rollDice = () => faces[Math.floor(Math.random() * faces.length)];
+  return [rollDice(), rollDice(), rollDice()];
+}
+
+function placeBet(bet, amount) {
+  const result = bauCuaRoll();
+  const check = result.filter((value) => value === bet).length;
+  return check > 0 ? amount * check : -amount;
+}
+
+// Sample usage
+console.log(placeBet("Bầu", 100)); // Kết quả có thể là 100, 200, 300, hoặc -100
+console.log(placeBet("Cá", 50)); // Kết quả có thể là 50, 100, 150, hoặc -50
+console.log(placeBet("Nai", 200)); // Kết quả có thể là 200, 400, 600, hoặc -200
